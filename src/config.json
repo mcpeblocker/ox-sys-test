@@ -1,0 +1,5 @@
+{
+    "tokenName": "auth-ox-sys-bearer-token",
+    "apiUrl": "https://face.ox-sys.com",
+    "defaultSubdomain": "face"
+}
