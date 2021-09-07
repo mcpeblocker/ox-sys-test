@@ -42,10 +42,13 @@ class ProductsTable extends React.Component {
     }
 
     filterProducts(search) {
+        let query = search?.toLowerCase();
         let filteredProducts = this.state.products?.filter(
-            product => new RegExp(search, "ig").test(product?.name)
+            product => new RegExp(query, "ig").test(product?.name)
         );
-        filteredProducts.sort();
+        filteredProducts.sort((a,b) => {
+            return a?.name?.toLowerCase().indexOf(query) > b?.name?.toLowerCase().indexOf(query)
+        });
         this.setState({ filteredProducts, loading: false });
     }
 
